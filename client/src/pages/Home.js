@@ -1,7 +1,12 @@
 import React  from 'react';
+import Hero from '../components/Hero';
+import How from '../components/How';
 
 export function Home(){
-    return <h1 className=''>Home</h1>
+    return <>
+    <Hero/>
+    <How/>
+    </>
     
 }
 export default Home

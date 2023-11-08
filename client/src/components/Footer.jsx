@@ -2,12 +2,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className='min-h-screen flex flex-col'>
-      <div className='flex-grow'>
-        {/* Your main content here */}
-      </div>
-
-      <div className='w-full mx-auto py-3 px-4 grid sm:grid-cols-2 sm:flex justify-normal lg:grid-cols-2 gap-3 text-gray-300 bg-black'>
+    <div className='flex flex-col'>
+      <div className=' w-full mx-auto py-3 px-4 grid sm:grid-cols-2 sm:flex justify-normal lg:grid-cols-2  text-gray-300 bg-black'>
         <div>
           <h6 className='font-medium text-gray-400 px-2'>Contact</h6>
           <ul>

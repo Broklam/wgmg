@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 
 const Hero = () => {
   return (
-    <div className="flex justify-between items-center bg-[#ffc017] py-10 lg:py-0 border-y border-black xl:border-hidden xl:rounded-xl">
+    <div className="flex justify-between items-center bg-[#ffc017] py-10 lg:py-0 border-y border-black xl:border-hidden ">
       {/* Component content */}
       <div className="px-10 space-y-5 lg:py-6">
         <h1 className="text-6xl md:text-7xl max-w-xl font-serif w-11/12 sm:w-9/12">
@@ -23,8 +23,8 @@ const Hero = () => {
           offset={40}
           duration={500}
         >
-          <button className="border border-black bg-white px-4 py-2 rounded-full font-medium active:scale-90 transition duration-100 animate-fade-up animate-once animate-duration-[1500ms] animate-delay-500 animate-ease-linear">
-            Scroll to H2
+          <button className="border border-black bg-white px-4 py-2 rounded-full font-medium active:scale-90 transition duration-100 animate-fade-up animate-once animate-duration-[500ms] animate-delay-100 animate-ease-linear">
+            How?
           </button>
         </Link>
       </div>

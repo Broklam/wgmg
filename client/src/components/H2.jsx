@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 const H2 = () => {
   const data = [
-    { text: '1.Create Account', img: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg' },
-    { text: '2.Set up your schedule', img: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg' },
-    { text: '3.Invite Friends!', img: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg' },
+    { text: '1.Create Account', img: './createAccount.jpg' },
+    { text: '2.Set up your schedule', img: './setUp.jpg' },
+    { text: '3.Invite Friends!', img: './friends.jpg' },
     { text: '4.Rock that ', img: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg' },
   ];
 

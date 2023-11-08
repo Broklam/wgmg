@@ -1,11 +1,11 @@
 import React  from 'react';
 import Hero from '../components/Hero';
-import How from '../components/How';
+import H2 from '../components/H2';
 
 export function Home(){
     return <>
     <Hero/>
-    <How/>
+    <H2/>
     </>
     
 }

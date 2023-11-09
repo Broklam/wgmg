@@ -1,52 +1,78 @@
 package main
 
-//my attempt to write vanilla router in go, which technically should be easy
-
 import (
+	"crypto/rand"
 	"encoding/json"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
-type Message struct {
-	Msg string `json:"msg"`
-}
+var jwtSecret = GenerateRandomSecretKey(32)
 
 func main() {
-	http.HandleFunc("/hello", helloHandler)
-	http.HandleFunc("/hi", hiHandler)
+	http.HandleFunc("/api/login", loginHandler)
+	http.HandleFunc("/api/test", authenticationMiddleware(testHandler))
 
-	server := &http.Server{
-		Addr:         ":8080",
-		ReadTimeout:  10 * time.Second,
-		WriteTimeout: 10 * time.Second,
-	}
-
+	// start server
 	go func() {
-		log.Println("Server is starting on port 8080...")
-		if err := server.ListenAndServe(); err != nil {
-			log.Fatalf("Server failed to start: %s", err)
+		err := http.ListenAndServe(":8080", nil)
+		if err != nil {
+			log.Fatal("Error listening on port :8080:", err)
 		}
 	}()
 
-	// Wait for an interrupt
-	<-make(chan struct{})
+	log.Println("Server started on :8080")
+	select {}
 }
 
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-	log.Println("Handling hello request...")
-	time.Sleep(5 * time.Second)
-	w.Write([]byte("Hello, World!"))
-}
+func loginHandler(w http.ResponseWriter, r *http.Request) {
+	username := r.FormValue("username")
+	password := r.FormValue("password")
 
-func hiHandler(w http.ResponseWriter, r *http.Request) {
-	log.Println("Handling hi request...")
-	response := Message{Msg: "hi"}
-	w.Header().Set("Content-Type", "application/json")
-
-	err := json.NewEncoder(w).Encode(response)
-	if err != nil {
-		log.Printf("Error encoding JSON: %s", err)
+	if username == "test" && password == "test" {
+		token, expiration := generateJWT(username)
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"status":     "successful",
+			"token":      token,
+			"expires_in": expiration.Format(time.RFC3339),
+		})
+		log.Printf("Login successful for user: %s", username)
+	} else {
+		http.Error(w, "Unauthorized", http.StatusUnauthorized)
+		log.Printf("Login failed for user: %s", username)
 	}
+}
+
+func testHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(map[string]string{"message": "I AM STILL NOT FINISHED"})
+	log.Println("Test endpoint accessed")
+}
+
+func generateJWT(username string) (string, time.Time) {
+	token := jwt.New(jwt.SigningMethodHS256)
+	claims := token.Claims.(jwt.MapClaims)
+	claims["username"] = username
+	claims["exp"] = time.Now().Add(time.Hour * 24).Unix()
+
+	tokenString, _ := token.SignedString(jwtSecret)
+	return tokenString, time.Now().Add(time.Hour * 24)
+}
+
+func authenticationMiddleware(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		// auth future logic
+		next(w, r)
+	}
+}
+
+func GenerateRandomSecretKey(length int) []byte {
+	randomBytes := make([]byte, length)
+	_, err := rand.Read(randomBytes)
+	if err != nil {
+		log.Fatal("Error generating secret key:", err)
+	}
+	return randomBytes
 }

@@ -22,5 +22,17 @@ RUN go build -o main .
 # Expose port 8080 to the outside world
 EXPOSE 8080
 
+# Install MariaDB server 
+RUN apt-get update && apt-get install -y mariadb-server
+
+# Set the MariaDB root password (customize as needed)
+ENV MYSQL_ROOT_PASSWORD=my-secret-pw
+
+# Set the name of your database
+ENV MYSQL_DATABASE=data
+
+# Expose port 3184 for MariaDB
+EXPOSE 3184
+
 # Run the binary program produced by `go build`
 CMD ["./main"]

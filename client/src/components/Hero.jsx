@@ -20,7 +20,7 @@ const Hero = () => {
           to="H2"
           spy={true}
           smooth={true}
-          offset={40}
+          offset={250}
           duration={500}
         >
           <button className="border border-black bg-white px-4 py-2 rounded-full font-medium active:scale-90 transition duration-100 animate-fade-up animate-once animate-duration-[500ms] animate-delay-100 animate-ease-linear">

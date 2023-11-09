@@ -6,7 +6,7 @@ const H2 = () => {
     { text: '1.Create Account', img: './createAccount.jpg' },
     { text: '2.Set up your schedule', img: './setUp.jpg' },
     { text: '3.Invite Friends!', img: './friends.jpg' },
-    { text: '4.Rock that ', img: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg' },
+    { text: '4.Rock that ', img: './rock.jpg' },
   ];
 
   return (
@@ -14,7 +14,7 @@ const H2 = () => {
       {data.map((item, index) => (
         <div key={index} className="flex flex-col items-center">
           <img src={item.img} alt={item.text} className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-200" />
-          <p className="mt-4 text-center">{item.text}</p>
+          <p className="mt-4 text-center text-xl">{item.text}</p>
         </div>
       ))}
     </div>

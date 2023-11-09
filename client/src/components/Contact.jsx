@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
+
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitted]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can handle the form submission. For example, you can send an email.
     console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+    setName('');
+    setEmail('');
+    setMessage('');
+    setSubmitted(true);
   };
 
   return (
@@ -44,7 +60,6 @@ const Contact = () => {
             Message
           </label>
           <textarea
-            
             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             id="message"
             value={message}
@@ -62,6 +77,26 @@ const Contact = () => {
             Or email me directly
           </a>
         </div>
+        {submitted && (
+  <motion.div 
+    className="p-2 mt-2"
+    initial={{ opacity: 1, scale: 1 }}
+    animate={{ 
+      y: ["20px", "-10px", "20px", "-10px", "10px", "2000px"],
+      opacity: [1, 1, 0.5, 0.3, 0.2, 0]
+    }}
+    transition={{ 
+      y: { times: [0, 0.2, 0.4, 0.6, 0.8, 1], duration: 2, ease: "easeInOut" },
+      opacity: { delay: 1.5 }
+    }}
+  >
+    <p className="text-black">Your message has been submitted!</p>
+  </motion.div>
+)}
+
+
+
+
       </form>
     </div>
   );

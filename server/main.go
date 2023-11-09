@@ -14,9 +14,10 @@ var jwtSecret = GenerateRandomSecretKey(32)
 
 func main() {
 	http.HandleFunc("/api/login", loginHandler)
+	http.HandleFunc("/api/change_password", changePasswordHandler)
 	http.HandleFunc("/api/test", authenticationMiddleware(testHandler))
 
-	// start server
+	// Start the server
 	go func() {
 		err := http.ListenAndServe(":8080", nil)
 		if err != nil {
@@ -46,6 +47,13 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func changePasswordHandler(w http.ResponseWriter, r *http.Request) {
+	//pass logic
+	// Respond with success message
+	json.NewEncoder(w).Encode(map[string]string{"message": "Password changed successfully"})
+	log.Println("Password changed successfully")
+}
+
 func testHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(map[string]string{"message": "I AM STILL NOT FINISHED"})
 	log.Println("Test endpoint accessed")
@@ -63,7 +71,7 @@ func generateJWT(username string) (string, time.Time) {
 
 func authenticationMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		// auth future logic
+		// Future auth logic (e.g., verify token from request header)
 		next(w, r)
 	}
 }

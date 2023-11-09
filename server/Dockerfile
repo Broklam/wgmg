@@ -26,8 +26,8 @@ EXPOSE 8080
 # Install MariaDB server 
 RUN apt-get update && apt-get install -y mariadb-server
 
-# Set the MariaDB root password (customize as needed)
-ENV MYSQL_ROOT_PASSWORD=my-secret-pw
+# Set the MariaDB root password 
+ENV MYSQL_ROOT_PASSWORD=1
 
 # Set the name of your database
 ENV MYSQL_DATABASE=data

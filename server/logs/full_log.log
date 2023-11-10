@@ -1,0 +1,6 @@
+2023/11/10 23:27:51 Starting server on port 3000
+2023/11/10 23:27:55 "POST http://localhost:3000/login HTTP/1.1" from [::1]:56012 - 200 229B in 927.417µs
+2023/11/10 23:27:56 "POST http://localhost:3000/login HTTP/1.1" from [::1]:56015 - 200 229B in 84.5µs
+2023/11/10 23:28:10 "POST http://localhost:3000/login HTTP/1.1" from [::1]:56041 - 200 229B in 123.833µs
+2023/11/10 23:28:14 "POST http://localhost:3000/login HTTP/1.1" from [::1]:56050 - 200 229B in 113.666µs
+2023/11/10 23:28:15 "POST http://localhost:3000/login HTTP/1.1" from [::1]:56055 - 200 229B in 124.542µs

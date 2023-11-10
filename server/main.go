@@ -1,86 +1,121 @@
 package main
 
 import (
-	"crypto/rand"
 	"encoding/json"
+	"io"
 	"log"
 	"net/http"
+	"os"
+	"regexp"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/jwtauth"
 )
 
-var jwtSecret = GenerateRandomSecretKey(32)
+var tokenAuth *jwtauth.JWTAuth
+var logger *log.Logger
+
+type begoneEscapeSign struct {
+	w io.Writer
+}
+
+func (ef *begoneEscapeSign) Write(p []byte) (n int, err error) {
+	re := regexp.MustCompile(`\x1b\[[0-9;]*m`)
+	cleanedP := re.ReplaceAll(p, nil)
+	return ef.w.Write(cleanedP)
+}
+
+func init() {
+	//TODO fix not so secret key currently
+	tokenAuth = jwtauth.New("HS256", []byte("secret"), nil)
+
+	//logger init
+	file, err := os.OpenFile("./logs/full_log.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	filter := &begoneEscapeSign{w: file}
+	multi := io.MultiWriter(filter, os.Stdout)
+	logger = log.New(multi, "", log.LstdFlags)
+}
 
 func main() {
-	http.HandleFunc("/api/login", loginHandler)
-	http.HandleFunc("/api/change_password", changePasswordHandler)
-	http.HandleFunc("/api/test", authenticationMiddleware(testHandler))
+	r := chi.NewRouter()
 
-	// Start the server
-	go func() {
-		err := http.ListenAndServe(":8080", nil)
-		if err != nil {
-			log.Fatal("Error listening on port :8080:", err)
-		}
-	}()
+	//  logging middleware
+	r.Use(middleware.RequestLogger(&middleware.DefaultLogFormatter{Logger: logger}))
 
-	log.Println("Server started on :8080")
-	select {}
-}
-
-func loginHandler(w http.ResponseWriter, r *http.Request) {
-	username := r.FormValue("username")
-	password := r.FormValue("password")
-
-	if username == "test" && password == "test" {
-		token, expiration := generateJWT(username)
-		json.NewEncoder(w).Encode(map[string]interface{}{
-			"status":     "successful",
-			"token":      token,
-			"expires_in": expiration.Format(time.RFC3339),
+	// public routes
+	r.Group(func(r chi.Router) {
+		r.Get("/public", func(w http.ResponseWriter, r *http.Request) {
+			logger.Println("Public endpoint hit")
+			w.Write([]byte("Public endpoint, no authentication required"))
 		})
-		log.Printf("Login successful for user: %s", username)
-	} else {
-		http.Error(w, "Unauthorized", http.StatusUnauthorized)
-		log.Printf("Login failed for user: %s", username)
-	}
+		r.Post("/login", LoginHandler)
+	})
+
+	// private routes
+	r.Group(func(r chi.Router) {
+		// jwt verif
+		r.Use(jwtauth.Verifier(tokenAuth))
+
+		// authenticator
+		r.Use(jwtauth.Authenticator)
+
+		r.Post("/change-password", ChangePasswordHandler)
+	})
+
+	logger.Println("Starting server on port 3000")
+	http.ListenAndServe(":3000", r)
 }
 
-func changePasswordHandler(w http.ResponseWriter, r *http.Request) {
-	//pass logic
-	// Respond with success message
-	json.NewEncoder(w).Encode(map[string]string{"message": "Password changed successfully"})
-	log.Println("Password changed successfully")
+type Credentials struct {
+	Login    string `json:"login"`
+	Password string `json:"password"`
 }
 
-func testHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(map[string]string{"message": "I AM STILL NOT FINISHED"})
-	log.Println("Test endpoint accessed")
-}
-
-func generateJWT(username string) (string, time.Time) {
-	token := jwt.New(jwt.SigningMethodHS256)
-	claims := token.Claims.(jwt.MapClaims)
-	claims["username"] = username
-	claims["exp"] = time.Now().Add(time.Hour * 24).Unix()
-
-	tokenString, _ := token.SignedString(jwtSecret)
-	return tokenString, time.Now().Add(time.Hour * 24)
-}
-
-func authenticationMiddleware(next http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		// Future auth logic (e.g., verify token from request header)
-		next(w, r)
-	}
-}
-
-func GenerateRandomSecretKey(length int) []byte {
-	randomBytes := make([]byte, length)
-	_, err := rand.Read(randomBytes)
+func LoginHandler(w http.ResponseWriter, r *http.Request) {
+	// Parse the JSON request body
+	var creds Credentials
+	err := json.NewDecoder(r.Body).Decode(&creds)
 	if err != nil {
-		log.Fatal("Error generating secret key:", err)
+		http.Error(w, "Invalid request body", http.StatusBadRequest)
+		return
 	}
-	return randomBytes
+
+	if creds.Login == "1" && creds.Password == "1" {
+		claims := jwt.MapClaims{
+			"user_id": 1,
+			"exp":     time.Now().Add(time.Hour * 72).Unix(), // Token expires after 72 hours
+		}
+		token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+		tokenString, _ := token.SignedString([]byte("your_secret"))
+
+		// Create a response
+		response := map[string]string{
+			"status": "Login successful",
+			"token":  tokenString,
+			"expiry": time.Now().Add(time.Hour * 72).String(),
+		}
+
+		jsonResponse, err := json.Marshal(response)
+		if err != nil {
+			http.Error(w, "Error creating response", http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(jsonResponse)
+	} else {
+		http.Error(w, "Invalid login or password", http.StatusUnauthorized)
+	}
+}
+
+func ChangePasswordHandler(w http.ResponseWriter, r *http.Request) {
+	logger.Println("Change password endpoint hit")
+
 }

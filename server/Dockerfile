@@ -19,18 +19,17 @@ COPY . .
 # Build the Go app
 RUN go build -o main .
 
-# Expose port 8080 to the outside world
+# Expose port 8080 for the Go app
 EXPOSE 8080
 
-
-# Install MariaDB server 
+# Install MariaDB server
 RUN apt-get update && apt-get install -y mariadb-server
 
-# Set the MariaDB root password 
-ENV MYSQL_ROOT_PASSWORD=1
+# Set the MariaDB root password
+ENV MYSQL_ROOT_PASSWORD=$DOCKER_DB_PASSWORD
 
 # Set the name of your database
-ENV MYSQL_DATABASE=data
+ENV MYSQL_DATABASE=$DOCKER_DB_DATABASE
 
 # Expose port 3184 for MariaDB
 EXPOSE 3184

@@ -17,3 +17,27 @@
 2023/11/11 11:10:40 "POST http://localhost:3000/login HTTP/1.1" from [::1]:50129 - 200 229B in 84.458µs
 2023/11/11 11:10:41 "POST http://localhost:3000/login HTTP/1.1" from [::1]:50133 - 200 229B in 86.167µs
 2023/11/11 12:44:51 Starting server on port 3000
+2023/11/11 14:32:21 Starting server on port 3000
+2023/11/11 15:59:34 Starting server on port 3000
+2023/11/11 15:59:44 Starting server on port 3000
+2023/11/11 15:59:58 Starting server on port 3000
+2023/11/11 16:00:06 Starting server on port 3000
+2023/11/11 16:00:49 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:50231 - 500 22B in 198.730208ms
+2023/11/11 16:01:11 Starting server on port 3000
+2023/11/11 16:01:15 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:50265 - 500 22B in 156.433625ms
+2023/11/11 16:01:35 Starting server on port 3000
+2023/11/11 16:01:38 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:50294 - 500 22B in 165.3515ms
+2023/11/11 16:03:15 Starting server on port 3000
+2023/11/11 16:06:00 Starting server on port 3000
+2023/11/11 16:06:05 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:50581 - 200 30B in 154.656375ms
+2023/11/11 16:24:03 Starting server on port 3000
+2023/11/11 16:28:41 Starting server on port 3000
+2023/11/11 16:32:01 Starting server on port 3000
+2023/11/11 16:35:20 Starting server on port 3000
+2023/11/11 16:35:42 Starting server on port 3000
+2023/11/11 16:36:21 Starting server on port 3000
+2023/11/11 16:38:55 Starting server on port 3000
+2023/11/11 16:39:28 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:52708 - 200 30B in 165.073833ms
+2023/11/11 16:39:31 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:52715 - 500 22B in 155.9655ms
+2023/11/11 16:40:00 Starting server on port 3000
+2023/11/11 16:40:05 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:52759 - 500 22B in 182.484ms

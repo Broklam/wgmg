@@ -9,6 +9,7 @@ import (
 
 	"github.com/Broklam/wg/db"
 	"github.com/Broklam/wg/handlers"
+
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/jwtauth"
@@ -43,6 +44,7 @@ func init() {
 }
 
 func main() {
+
 	db.CreateDb()
 	r := chi.NewRouter()
 
@@ -56,6 +58,7 @@ func main() {
 			w.Write([]byte("Public endpoint, no authentication required"))
 		})
 		r.Post("/login", handlers.LoginHandler)
+		r.Post("/signup", handlers.RegisterNewUser)
 	})
 
 	// private routes

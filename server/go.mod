@@ -8,9 +8,12 @@ require (
 	github.com/go-chi/jwtauth v1.2.0
 )
 
+require golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f // indirect
+
 require (
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/goccy/go-json v0.3.5 // indirect
+	github.com/joho/godotenv v1.5.1
 	github.com/lestrrat-go/backoff/v2 v2.0.7 // indirect
 	github.com/lestrrat-go/httpcc v1.0.0 // indirect
 	github.com/lestrrat-go/iter v1.0.0 // indirect

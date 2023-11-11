@@ -16,3 +16,4 @@
 2023/11/11 11:10:40 "POST http://localhost:3000/login HTTP/1.1" from [::1]:50126 - 200 229B in 80.125µs
 2023/11/11 11:10:40 "POST http://localhost:3000/login HTTP/1.1" from [::1]:50129 - 200 229B in 84.458µs
 2023/11/11 11:10:41 "POST http://localhost:3000/login HTTP/1.1" from [::1]:50133 - 200 229B in 86.167µs
+2023/11/11 12:44:51 Starting server on port 3000

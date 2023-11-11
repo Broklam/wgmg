@@ -7,6 +7,7 @@ import (
 	"os"
 	"regexp"
 
+	"github.com/Broklam/wg/db"
 	"github.com/Broklam/wg/handlers"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -42,6 +43,7 @@ func init() {
 }
 
 func main() {
+	db.CreateDb()
 	r := chi.NewRouter()
 
 	//  logging middleware

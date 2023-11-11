@@ -1,12 +1,14 @@
-package main_test
+package handlers_test
 
 import (
 	"bytes"
+
 	"encoding/json"
-	"github.com/Broklam/wg/handlers"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/Broklam/wg/handlers"
 )
 
 type Response struct {

@@ -14,6 +14,7 @@ type User struct {
 	ID           int
 	Username     string
 	PasswordHash string
+	Role         string
 	CreatedAt    time.Time
 	ModifiedAt   time.Time
 }
@@ -40,11 +41,12 @@ func CreateDb() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	_, err = db.Exec(`
 	
 	CREATE TABLE IF NOT EXISTS roles (
-		role_name VARCHAR(50) NO2T NULL,
 		user_id INT,
+		role VARCHAR(50) NOT NULL,
 		FOREIGN KEY (user_id) REFERENCES users(id)
 	)
 	`)

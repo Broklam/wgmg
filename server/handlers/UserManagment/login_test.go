@@ -8,7 +8,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/Broklam/wg/handlers"
+	"github.com/Broklam/wg/handlers/UserManagment"
 )
 
 type Response struct {

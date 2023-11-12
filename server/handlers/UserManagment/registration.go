@@ -14,6 +14,7 @@ import (
 type RegistrationRequest struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
+	Role     string `json:"role"`
 }
 
 func RegisterNewUser(w http.ResponseWriter, r *http.Request) {
@@ -32,11 +33,11 @@ func RegisterNewUser(w http.ResponseWriter, r *http.Request) {
 
 	username := req.Username
 	password := req.Password
+	role := req.Role
 	passwordHash := hasher.GenerateFromPassword(password)
 
 	stmt, err := db.Prepare("INSERT INTO users (username, PasswordHash) VALUES (?, ?)")
 	if err != nil {
-		log.Println("Error preparing SQL statement:", err)
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
@@ -45,6 +46,22 @@ func RegisterNewUser(w http.ResponseWriter, r *http.Request) {
 	_, err = stmt.Exec(username, passwordHash)
 	if err != nil {
 		log.Println("Error executing SQL statement:", err)
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		return
+	}
+	var userID int
+	err = db.QueryRow("SELECT id FROM users WHERE username = ?", username).Scan(&userID)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Insert role and userID into roles table
+	_, err = db.Exec("INSERT INTO roles (user_id, role_name) VALUES (?, ?)", userID, role)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err != nil {
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}

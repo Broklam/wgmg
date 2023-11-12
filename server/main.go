@@ -8,7 +8,7 @@ import (
 	"regexp"
 
 	"github.com/Broklam/wg/db"
-	"github.com/Broklam/wg/handlers"
+	"github.com/Broklam/wg/handlers/UserManagment"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -52,6 +52,7 @@ func main() {
 	r.Use(middleware.RequestLogger(&middleware.DefaultLogFormatter{Logger: logger}))
 
 	// public routes
+	// TODO FIX ROUTING ITS A MESS
 	r.Group(func(r chi.Router) {
 		r.Get("/public", func(w http.ResponseWriter, r *http.Request) {
 			logger.Println("Public endpoint hit")
@@ -59,6 +60,7 @@ func main() {
 		})
 		r.Post("/login", handlers.LoginHandler)
 		r.Post("/signup", handlers.RegisterNewUser)
+		r.Post("/deleteuser", handlers.DeleteUser) //TODO change to protected later!!
 	})
 
 	// private routes

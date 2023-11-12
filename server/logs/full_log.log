@@ -41,3 +41,87 @@
 2023/11/11 16:39:31 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:52715 - 500 22B in 155.9655ms
 2023/11/11 16:40:00 Starting server on port 3000
 2023/11/11 16:40:05 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:52759 - 500 22B in 182.484ms
+2023/11/12 01:00:11 Starting server on port 3000
+2023/11/12 01:00:27 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:58742 - 500 22B in 172.083ms
+2023/11/12 01:00:59 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:58778 - 200 30B in 159.055ms
+2023/11/12 01:01:48 Starting server on port 3000
+2023/11/12 01:03:08 Starting server on port 3000
+2023/11/12 01:18:21 Starting server on port 3000
+2023/11/12 01:18:42 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:59941 - 500 22B in 158.803125ms
+2023/11/12 01:20:38 Starting server on port 3000
+2023/11/12 01:20:40 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:60076 - 500 22B in 154.935125ms
+2023/11/12 01:21:52 Starting server on port 3000
+2023/11/12 01:21:56 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:60164 - 500 22B in 157.341792ms
+2023/11/12 01:22:00 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:60173 - 200 30B in 156.735667ms
+2023/11/12 01:30:18 Starting server on port 3000
+2023/11/12 01:34:01 Starting server on port 3000
+2023/11/12 01:35:11 Starting server on port 3000
+2023/11/12 01:35:36 Starting server on port 3000
+2023/11/12 01:35:38 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61061 - 000 0B in 3.002375ms
+2023/11/12 01:36:05 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61092 - 000 0B in 2.218125ms
+2023/11/12 01:36:41 Starting server on port 3000
+2023/11/12 01:36:44 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61137 - 000 0B in 4.178792ms
+2023/11/12 01:37:01 Starting server on port 3000
+2023/11/12 01:37:02 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61165 - 000 0B in 2.902458ms
+2023/11/12 01:37:26 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61193 - 000 0B in 2.731709ms
+2023/11/12 01:37:40 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61212 - 000 0B in 2.081584ms
+2023/11/12 01:37:42 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61217 - 000 0B in 4.198583ms
+2023/11/12 01:37:42 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61222 - 000 0B in 1.866958ms
+2023/11/12 01:37:43 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61226 - 000 0B in 3.245875ms
+2023/11/12 01:38:22 Starting server on port 3000
+2023/11/12 01:38:26 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61281 - 000 0B in 4.840666ms
+2023/11/12 01:38:26 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61285 - 000 0B in 2.936042ms
+2023/11/12 01:38:27 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61290 - 000 0B in 4.207375ms
+2023/11/12 01:38:28 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61295 - 000 0B in 2.817458ms
+2023/11/12 01:38:38 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61309 - 000 0B in 2.810125ms
+2023/11/12 01:38:51 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61326 - 000 0B in 2.13ms
+2023/11/12 01:38:59 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61338 - 000 0B in 1.381875ms
+2023/11/12 01:39:08 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61351 - 000 0B in 1.95775ms
+2023/11/12 01:39:16 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61363 - 000 0B in 1.938875ms
+2023/11/12 01:39:26 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61377 - 000 0B in 2.146084ms
+2023/11/12 01:40:55 Starting server on port 3000
+2023/11/12 01:40:59 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:61480 - 000 0B in 5.768334ms
+2023/11/12 01:54:16 Starting server on port 3000
+2023/11/12 01:55:32 Starting server on port 3000
+2023/11/12 01:55:50 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:62400 - 500 22B in 152.622ms
+2023/11/12 01:56:04 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:62421 - 200 40B in 4.440917ms
+2023/11/12 01:56:11 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:62433 - 200 30B in 155.579417ms
+2023/11/12 01:57:02 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62487 - 404 15B in 1.1505ms
+2023/11/12 01:57:08 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62497 - 404 15B in 991.458µs
+2023/11/12 01:57:21 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62514 - 404 15B in 1.148375ms
+2023/11/12 01:57:29 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62527 - 404 15B in 2.165375ms
+2023/11/12 01:59:31 Starting server on port 3000
+2023/11/12 01:59:33 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62660 - 404 15B in 1.575791ms
+2023/11/12 01:59:36 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62668 - 404 15B in 1.86825ms
+2023/11/12 01:59:36 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62672 - 404 15B in 2.302834ms
+2023/11/12 01:59:43 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:62684 - 500 22B in 152.2285ms
+2023/11/12 01:59:48 "POST http://localhost:3000/deleteuser HTTP/1.1" from [::1]:62695 - 200 28B in 3.375458ms
+2023/11/12 02:01:23 Starting server on port 3000
+2023/11/12 02:01:37 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62816 - 404 15B in 1.540542ms
+2023/11/12 02:03:57 Starting server on port 3000
+2023/11/12 02:04:04 "POST http://localhost:3000/login HTTP/1.1" from [::1]:62977 - 200 27B in 2.83ms
+2023/11/12 02:04:09 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:62986 - 500 22B in 153.330333ms
+2023/11/12 02:04:20 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:63003 - 500 22B in 149.078375ms
+2023/11/12 02:07:31 Starting server on port 3000
+2023/11/12 02:07:44 "POST http://localhost:3000/login HTTP/1.1" from [::1]:63219 - 200 27B in 2.361ms
+2023/11/12 02:07:49 "POST http://localhost:3000/login HTTP/1.1" from [::1]:63228 - 200 27B in 1.287292ms
+2023/11/12 02:08:00 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:63243 - 200 30B in 160.165292ms
+2023/11/12 02:08:08 "POST http://localhost:3000/login HTTP/1.1" from [::1]:63257 - 200 27B in 1.353291ms
+2023/11/12 02:10:45 Starting server on port 3000
+2023/11/12 02:10:49 "POST http://localhost:3000/login HTTP/1.1" from [::1]:63431 - 401 46B in 1.96425ms
+2023/11/12 02:11:22 Starting server on port 3000
+2023/11/12 02:11:25 "POST http://localhost:3000/login HTTP/1.1" from [::1]:63473 - 401 46B in 1.990917ms
+2023/11/12 02:12:10 Starting server on port 3000
+2023/11/12 02:12:12 "POST http://localhost:3000/login HTTP/1.1" from [::1]:63530 - 401 46B in 1.672625ms
+2023/11/12 02:15:03 Starting server on port 3000
+2023/11/12 02:15:23 "POST http://localhost:3000/login HTTP/1.1" from [::1]:63729 - 401 46B in 2.57975ms
+2023/11/12 02:23:16 Starting server on port 3000
+2023/11/12 02:23:21 "POST http://localhost:3000/login HTTP/1.1" from [::1]:64225 - 401 46B in 2.265792ms
+2023/11/12 02:23:58 "POST http://localhost:3000/login HTTP/1.1" from [::1]:64267 - 200 138B in 156.350292ms
+2023/11/12 02:24:10 "POST http://localhost:3000/login HTTP/1.1" from [::1]:64283 - 401 46B in 1.569375ms
+2023/11/12 02:24:17 "POST http://localhost:3000/login HTTP/1.1" from [::1]:64294 - 200 138B in 158.187417ms
+2023/11/12 10:26:44 Starting server on port 3000
+2023/11/12 10:26:49 "POST http://localhost:3000/login HTTP/1.1" from [::1]:57409 - 200 138B in 206.655375ms
+2023/11/12 10:26:52 "POST http://localhost:3000/login HTTP/1.1" from [::1]:57416 - 401 46B in 2.168125ms
+2023/11/12 10:30:14 Starting server on port 3000
+2023/11/12 10:30:20 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:57639 - 200 30B in 169.748125ms

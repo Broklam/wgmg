@@ -125,3 +125,59 @@
 2023/11/12 10:26:52 "POST http://localhost:3000/login HTTP/1.1" from [::1]:57416 - 401 46B in 2.168125ms
 2023/11/12 10:30:14 Starting server on port 3000
 2023/11/12 10:30:20 "POST http://localhost:3000/signup HTTP/1.1" from [::1]:57639 - 200 30B in 169.748125ms
+2023/11/13 00:04:00 Starting server on port 3000
+2023/11/13 00:04:22 "POST http://localhost:3000/change-password/ HTTP/1.1" from [::1]:58740 - 404 19B in 22.209µs
+2023/11/13 00:04:37 Starting server on port 3000
+2023/11/13 00:04:45 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:58770 - 401 15B in 17.125µs
+2023/11/13 00:05:09 "POST http://localhost:3000/login HTTP/1.1" from [::1]:58796 - 200 138B in 187.943625ms
+2023/11/13 00:05:27 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:58818 - 401 15B in 52.292µs
+2023/11/13 00:05:46 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:58841 - 401 15B in 46.625µs
+2023/11/13 00:09:38 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59178 - 401 15B in 1.663791ms
+2023/11/13 00:10:27 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59233 - 401 15B in 161.541µs
+2023/11/13 00:11:19 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59289 - 401 22B in 4.041875ms
+2023/11/13 00:11:31 "POST http://localhost:3000/login HTTP/1.1" from [::1]:59303 - 200 138B in 220.230542ms
+2023/11/13 00:11:43 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59320 - 401 22B in 119.292µs
+2023/11/13 00:14:55 Starting server on port 3000
+2023/11/13 00:14:57 "POST http://localhost:3000/login HTTP/1.1" from [::1]:59718 - 200 138B in 160.045625ms
+2023/11/13 00:15:13 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59738 - 401 22B in 188.625µs
+2023/11/13 00:17:38 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59889 - 401 22B in 105.375µs
+2023/11/13 00:18:00 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59914 - 401 22B in 98µs
+2023/11/13 00:18:07 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59924 - 401 22B in 97.667µs
+2023/11/13 00:18:13 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59924 - 401 22B in 80.75µs
+2023/11/13 00:18:22 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59924 - 401 15B in 12.75µs
+2023/11/13 00:18:24 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59946 - 401 22B in 105.167µs
+2023/11/13 00:18:32 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:59957 - 401 22B in 94.5µs
+2023/11/13 00:22:51 Starting server on port 3000
+2023/11/13 00:22:58 "POST http://localhost:3000/login HTTP/1.1" from [::1]:60241 - 200 138B in 154.486333ms
+2023/11/13 00:23:10 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:60257 - 401 22B in 236.875µs
+2023/11/13 00:25:20 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:60395 - 401 22B in 97.5µs
+2023/11/13 00:25:41 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:60419 - 401 22B in 58.625µs
+2023/11/13 00:25:46 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:60427 - 401 15B in 29.208µs
+2023/11/13 00:25:52 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:60435 - 401 15B in 28.167µs
+2023/11/13 00:25:54 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:60441 - 401 15B in 34.5µs
+2023/11/13 00:25:59 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:60448 - 401 15B in 29.542µs
+2023/11/13 00:26:01 "POST http://localhost:3000/change_password HTTP/1.1" from [::1]:60454 - 401 22B in 101.208µs
+2023/11/13 00:31:50 Starting server on port 3000
+2023/11/13 00:32:11 "POST http://localhost:3000/api/login HTTP/1.1" from [::1]:60851 - 200 138B in 161.736583ms
+2023/11/13 00:32:21 "POST http://localhost:3000/api/change_password HTTP/1.1" from [::1]:60867 - 401 22B in 131.25µs
+2023/11/15 19:27:58 Starting server on port 3000
+2023/11/15 19:31:50 Starting server on port 3000
+2023/11/15 19:32:25 "OPTIONS http://localhost:3030/api/signup HTTP/1.1" from [::1]:50620 - 401 15B in 146.375µs
+2023/11/16 00:56:48 Starting server on port 8080
+2023/11/16 00:56:59 "OPTIONS http://localhost:8080/api/signup HTTP/1.1" from [::1]:57113 - 401 15B in 115.667µs
+2023/11/16 01:00:27 Starting server on port 8080
+2023/11/16 01:00:32 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:58192 - 200 30B in 176.617875ms
+2023/11/16 01:00:42 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:58192 - 500 22B in 273.688917ms
+2023/11/16 01:05:48 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 200 30B in 162.892583ms
+2023/11/16 01:05:54 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 500 22B in 163.503292ms
+2023/11/16 01:08:58 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 200 30B in 157.480083ms
+2023/11/16 01:09:02 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 500 22B in 157.219792ms
+2023/11/16 01:09:03 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 500 22B in 153.783209ms
+2023/11/16 01:09:07 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 200 30B in 152.672709ms
+2023/11/16 01:09:10 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 500 22B in 159.306416ms
+2023/11/16 01:09:15 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 500 22B in 155.515875ms
+2023/11/16 01:09:21 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:59809 - 500 22B in 156.113708ms
+2023/11/16 01:13:28 "POST http://localhost:8080/api/login HTTP/1.1" from [::1]:59809 - 200 140B in 152.695542ms
+2023/11/16 01:13:31 "POST http://localhost:8080/api/login HTTP/1.1" from [::1]:59809 - 401 46B in 3.692375ms
+2023/11/16 01:13:36 "POST http://localhost:8080/api/login HTTP/1.1" from [::1]:59809 - 200 140B in 154.664208ms
+2023/11/16 01:17:42 "POST http://localhost:8080/api/login HTTP/1.1" from [::1]:59809 - 200 140B in 151.454917ms

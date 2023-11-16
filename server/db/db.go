@@ -9,7 +9,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-// User represents a user record in the database
+// user struct
 type User struct {
 	ID           int
 	Username     string
@@ -20,14 +20,13 @@ type User struct {
 }
 
 func CreateDb() {
-	// Replace with your actual MySQL connection details
+	// TODO local .env
 	db, err := sql.Open("mysql", "root:sasdoP123@tcp(127.0.0.1:3306)/data")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
-	// Create the users table
 	_, err = db.Exec(`
 
 		CREATE TABLE IF NOT EXISTS users (

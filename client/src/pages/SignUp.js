@@ -1,11 +1,11 @@
 import React  from 'react';
 import RegistrationForm from '../components/RegistrationForm';
 
-export function About(){
+export function SignUp(){
     return <h1 className=''>
         <div>
             <RegistrationForm/>
         </div>
     </h1>
 }
-export default About
+export default SignUp;

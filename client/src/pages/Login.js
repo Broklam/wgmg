@@ -1,9 +1,10 @@
 import React  from 'react';
+import LoginForm from '../components/LoginForm';
 
 export function Login(){
     return <h1 className=''>
         <div>
-            WORK IN PROGRESS
+            <LoginForm/>
         </div>
     </h1>
 }

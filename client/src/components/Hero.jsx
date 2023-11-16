@@ -4,7 +4,6 @@ import { Link } from 'react-scroll';
 const Hero = () => {
   return (
     <div className="flex justify-between items-center bg-[#ffc017] py-10 lg:py-0 border-y border-black xl:border-hidden ">
-      {/* Component content */}
       <div className="px-10 space-y-5 lg:py-6">
         <h1 className="text-6xl md:text-7xl max-w-xl font-serif w-11/12 sm:w-9/12">
           <span className="underline decoration-black decoration-4">
@@ -28,15 +27,12 @@ const Hero = () => {
           </button>
         </Link>
       </div>
-      {/*Image on the right*/}
       <img
         className="hidden sm:inline-flex h-40 lg:h-80 xl:h-full"
         src="./logo.png"
         alt=""
       />
-      {/* H2 component */}
       <div name="H2" className="my-16">
-        {/* H2 component content... */}
       </div>
     </div>
   );

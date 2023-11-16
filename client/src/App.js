@@ -4,6 +4,7 @@ import {Login} from "./pages/Login"
 import {About} from "./pages/About"
 import React  from 'react';
 import Layout from "./layout/layout";
+import SignUp from "./pages/SignUp";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/login" element={<Login/>}/>
+      <Route path="/signup" element={<SignUp/>}/>
       <Route/>
     </Routes>
     </Layout>

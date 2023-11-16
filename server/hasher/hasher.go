@@ -59,8 +59,7 @@ type Params struct {
 }
 
 func ComparePasswordAndHash(password string, encodedHash string) (match bool, err error) {
-	// Extract the parameters, salt and derived key from the encoded password
-	// hash.
+
 	p := &Params{
 		Memory:      64 * 1024,
 		Iterations:  3,
@@ -74,12 +73,8 @@ func ComparePasswordAndHash(password string, encodedHash string) (match bool, er
 		return false, err
 	}
 
-	// Derive the key from the other password using the same parameters.
 	otherHash := argon2.IDKey([]byte(password), salt, p.Iterations, p.Memory, p.Parallelism, p.KeyLength)
 
-	// Check that the contents of the hashed passwords are identical. Note
-	// that we are using the subtle.ConstantTimeCompare() function for this
-	// to help prevent timing attacks.
 	if subtle.ConstantTimeCompare(hash, otherHash) == 1 {
 		return true, nil
 	}
@@ -130,11 +125,8 @@ func GenerateFromPassword(password string) (encodedHash string) {
 
 	hash := argon2.IDKey([]byte(password), salt, p1.Iterations, p1.Memory, p1.Parallelism, p1.KeyLength)
 
-	// Base64 encode the salt and hashed password.
 	b64Salt := base64.RawStdEncoding.EncodeToString(salt)
 	b64Hash := base64.RawStdEncoding.EncodeToString(hash)
-
-	// Return a string using the standard encoded hash representation.
 
 	encodedHash = fmt.Sprintf("$argon2id$v=%d$m=%d,t=%d,p=%d$%s$%s",
 		argon2.Version, p1.Memory, p1.Iterations, p1.Parallelism, b64Salt, b64Hash)

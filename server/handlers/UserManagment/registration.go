@@ -25,7 +25,7 @@ func RegisterNewUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, err := sql.Open("mysql", "root:sasdoP123@tcp(127.0.0.1:3306)/data")
+	db, err := sql.Open("mysql", "root:sasdoP123@tcp(db:3306)/data")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -56,7 +56,7 @@ func RegisterNewUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Insert role and userID into roles table
-	_, err = db.Exec("INSERT INTO roles (user_id, role_name) VALUES (?, ?)", userID, role)
+	_, err = db.Exec("INSERT INTO roles (user_id, role) VALUES (?, ?)", userID, role)
 	if err != nil {
 		log.Fatal(err)
 	}

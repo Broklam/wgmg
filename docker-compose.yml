@@ -1,12 +1,27 @@
-version: '3'
+version: '3.1'
+
 services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sasdoP123
+      MYSQL_DATABASE: data
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  server:
+    build: server
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
   client:
     build: ./client
     ports:
       - 3000:3000
     depends_on:
       - server
-  server:
-    build: ./server
-    ports:
-      - 8080:8080

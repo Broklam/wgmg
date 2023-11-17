@@ -21,7 +21,7 @@ type User struct {
 
 func CreateDb() {
 	// TODO local .env
-	db, err := sql.Open("mysql", "root:sasdoP123@tcp(127.0.0.1:3306)/data")
+	db, err := sql.Open("mysql", "root:sasdoP123@tcp(db:3306)/data")
 	if err != nil {
 		log.Fatal(err)
 	}

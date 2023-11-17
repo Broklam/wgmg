@@ -35,16 +35,16 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, err := sql.Open("mysql", "root:sasdoP123@tcp(127.0.0.1:3306)/data")
+	db, err := sql.Open("mysql", "root:sasdoP123@tcp(db:3306)/data")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
 	var passwordHash string
-	log.Println(req.Username)
+
 	err = db.QueryRow("SELECT passwordhash FROM users WHERE username = ?", req.Username).Scan(&passwordHash)
-	log.Println(passwordHash)
+
 	if err != nil {
 		if err == sql.ErrNoRows {
 			w.WriteHeader(http.StatusUnauthorized)

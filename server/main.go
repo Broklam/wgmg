@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+	"time"
 
 	"github.com/Broklam/wg/db"
 	"github.com/Broklam/wg/handlers/UserManagment"
@@ -45,7 +46,8 @@ func init() {
 }
 
 func main() {
-	db.CreateDb()
+	//db.CreateDb()
+	time.AfterFunc(15*time.Second, db.CreateDb)
 	r := chi.NewRouter()
 
 	cors := cors.New(cors.Options{

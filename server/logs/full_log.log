@@ -181,3 +181,7 @@
 2023/11/16 01:13:31 "POST http://localhost:8080/api/login HTTP/1.1" from [::1]:59809 - 401 46B in 3.692375ms
 2023/11/16 01:13:36 "POST http://localhost:8080/api/login HTTP/1.1" from [::1]:59809 - 200 140B in 154.664208ms
 2023/11/16 01:17:42 "POST http://localhost:8080/api/login HTTP/1.1" from [::1]:59809 - 200 140B in 151.454917ms
+2023/11/17 02:29:40 Starting server on port 8080
+2023/11/17 02:30:44 "POST http://localhost:8080/api/login HTTP/1.1" from [::1]:56098 - 200 140B in 168.311167ms
+2023/11/17 02:30:51 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:56098 - 500 22B in 157.011709ms
+2023/11/17 02:30:54 "POST http://localhost:8080/api/signup HTTP/1.1" from [::1]:56098 - 200 30B in 230.706416ms
